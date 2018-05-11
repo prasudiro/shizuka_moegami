@@ -1,22 +1,3 @@
-<?php 
-
-include dirname( __FILE__) . ('/includes/class-mp3.php');
-
-$directory = 'C:\xampp\htdocs\imas_radio\wp-content\imasmp3/';
-
-$files = glob($directory . '*.mp3');
-
-if ( $files !== false )
-{
-    $filecount = count( $files );
-}
-else
-{
-    $filecount = 0;
-}
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>

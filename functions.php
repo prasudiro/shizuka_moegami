@@ -1,5 +1,7 @@
 <?php
 
+include dirname( __FILE__) . ('/includes/class-mp3.php');
+
 function imas_start_session() 
 {
   if(!session_id()) {
