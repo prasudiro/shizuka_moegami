@@ -36,13 +36,15 @@ else
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-	<title id="html_title">
-    <?php if(is_front_page() || is_home()){
-        echo get_bloginfo('name');
-    } else{
-        echo wp_title('').' | '.get_bloginfo('description');
-    }?>
-  </title>
+  <?php if(is_front_page() || is_home()) : ?> 	
+		<title id="html_title">
+			<?php echo get_bloginfo('name'); ?>        
+	  </title>
+	<?php else : ?>
+		<title>
+			<?php echo wp_title('').' | '.get_bloginfo('name'); ?>
+	  </title>
+	<?php endif; ?>
 
 <?php wp_head(); ?>
 
