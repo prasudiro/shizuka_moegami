@@ -21,7 +21,7 @@ require_once dirname( __FILE__) . ('/../library/getid3/getid3.php');
 // Initialize getID3 engine
 $getID3 = new getID3;
 
-$DirectoryToScan = 'C:\xampp\htdocs\imas_radio\wp-content\imasmp3/'; // change to whatever directory you want to scan
+$DirectoryToScan = '/home/iluminarie/imasmp3/'; // change to whatever directory you want to scan
 $dir = opendir($DirectoryToScan);
 
 ?>
