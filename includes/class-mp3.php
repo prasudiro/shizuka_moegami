@@ -23,5 +23,5 @@ $getID3 = new getID3;
 
 $DirectoryToScan = 'C:\xampp\htdocs\imas_radio\wp-content\imasmp3/'; // change to whatever directory you want to scan
 $dir = opendir($DirectoryToScan);
-;
+
 ?>

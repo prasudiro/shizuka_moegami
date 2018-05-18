@@ -90,3 +90,29 @@ function get_radio_url()
   return $radio_url;
 }
 add_shortcode('radio_url', 'get_radio_url');
+
+function get_list_song()
+{  
+  include dirname( __FILE__ ).'/includes/class-mp3.php';
+
+  echo "<ol class='list-group'>";
+
+  while (($file = readdir($dir)) !== false) 
+  {
+
+    $FullFileName = realpath($DirectoryToScan.'/'.$file);
+
+    if ((substr($file, 0, 1) != '.') && is_file($FullFileName)) {
+      set_time_limit(30);
+
+      $ThisFileInfo = $getID3->analyze($FullFileName);
+
+      getid3_lib::CopyTagsToComments($ThisFileInfo);
+
+      echo "<li><b>".htmlspecialchars_decode(htmlentities(implode('<br>', $ThisFileInfo['comments_html']['artist'])))."</b> - ".htmlspecialchars_decode(htmlentities(implode('<br>', $ThisFileInfo['comments_html']['title'])))."</li>";
+    }
+  }
+      
+  echo "</ol>";
+}
+add_shortcode('list_song', 'get_list_song');
