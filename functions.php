@@ -109,7 +109,7 @@ function get_list_song()
 
       getid3_lib::CopyTagsToComments($ThisFileInfo);
 
-      echo "<li><b>".htmlspecialchars_decode(htmlentities(implode('<br>', $ThisFileInfo['comments_html']['artist'])))."</b> - ".htmlspecialchars_decode(htmlentities(implode('<br>', $ThisFileInfo['comments_html']['title'])))."</li>";
+      echo "<li><b>".htmlspecialchars_decode(htmlentities(implode('<br>', $ThisFileInfo['comments_html']['artist'])))."</b> - ".htmlspecialchars_decode(htmlentities(implode('<br>', $ThisFileInfo['comments_html']['title'])))." (".$ThisFileInfo['filename'].")</li>";
     }
   }
       
